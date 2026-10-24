@@ -22,7 +22,8 @@ Windows 个人功能中心。设计原则：**极简模块可开关 → 轻量 �
 - .NET 10 + WPF；依赖仅 WPF-UI 4.3（连字符包名）+ H.NotifyIcon.Wpf 2.4。
 - 构建：`dotnet build HyakkeiTools.slnx -c Release`；开发运行：`src\Hyakkei.App\bin\Release\net10.0-windows10.0.19041.0\HyakkeiTools.exe`（App/Translator 为 windows10 TFM，解锁 WinRT OCR；Core/AutoClicker 仍为 net10.0-windows）。
 - **打包**：`scripts\publish.ps1` → `dist\HyakkeiTools.exe`（单文件 31MB，framework-dependent；`-SelfContained` 可捆绑运行时）。用户日常运行 dist 版，配置/日志在 dist 同目录，脚本重发布时保留。
-- 版本控制：已 `git init`（2026-08-15），每次阶段完成提交；`dotnet format whitespace` 统一格式。
+- 版本控制：已 `git init`（2026-08-15），每次阶段完成提交并推送；`dotnet format whitespace` 统一格式。
+- **GitHub**：`Isla-7940/HyakkeiTools`（公开，2026-10-24 从 teadustneineinei-glitch 旧仓迁入，本地提交身份已切 Isla-7940 noreply 邮箱）；发版 = 两个 zip（自带运行时 / lite）经 API 传 Release，凭据走 git credential fill，勿打印。
 
 ## 关键经验
 - **UI 文案极简**：界面里不写说明/引导文字（搜索框占位只写「检索」，岛列表只显示模块名不带描述），操作方式写文档不写界面。
