@@ -39,6 +39,7 @@ Windows 个人功能中心。设计原则：**极简模块可开关 → 轻量 �
 - 纯代码构造 H.NotifyIcon 的 `TaskbarIcon` 必须调 `ForceCreate(enablesEfficiencyMode: false)`，否则托盘图标不出现。
 
 ## 当前状态
+- [2026-10-24] **v0.7 挂机模块**：组合长按（键盘芯片可增删捕获，默认 ~+W；鼠标 左/右/无 分段），F6 一键全按住/全松开；开始快照组合、停止按快照松开防卡键；会话解除/退出强制松开。用户场景：Minecraft 边走边挖。
 - [2026-08-15] **v0.6 整理 + 打包**：Win32 辅助收拢到 Core（`WindowExStyles`、`WindowActivator.IsForeground`）、语种侦测去重（`LanguageDetect`）、岛快捷动作拆为 `IslandWindow.QuickActions.cs`；`scripts/publish.ps1` 单文件发布；`docs/usage.md` 用户手册。
 - [2026-08-15] **v0.5**：① 服务商回退链——用户在国外，Auto = 谷歌(gtx 免费接口，已实测) → 百度(有Key时) → 腾讯兜底，失败自动降级，`Tools.translator.Provider` 可强制；② **截屏翻译**——面板「截屏」→ 拉框 → Windows 内置 OCR（Windows.Media.Ocr）→ 自动翻译；③ **法语**——目标分段 自动/中/EN/FR，本地侦测 zh/fr/en（法语靠重音字符+虚词），谷歌源语言交给 `sl=auto`，百度法语代码 `fra`；④ **F6 一键两用**（用户定稿）：有选中文字→划词翻译弹岛，无选中→截屏翻译就地出卡片（译文贴选区旁 + 天青描边，可拖动；卡片内可切目标语言重译、「复制原文/复制译文」，原文即 OCR 结果=文字识别功能）；面板内 Ctrl+1-4 切目标语言（裸数字永远输入）。不加第二热键。
 - 经验：Bash/perl 写入非 ASCII 会双重编码，**含中文/重音的改动用 Edit/Write 工具**，Bash 只做纯 ASCII 替换。

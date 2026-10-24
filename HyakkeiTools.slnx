@@ -4,6 +4,7 @@
     <Project Path="src/Hyakkei.Core/Hyakkei.Core.csproj" />
   </Folder>
   <Folder Name="/src/Tools/">
+    <Project Path="src/Tools/Hyakkei.Tool.AfkHold/Hyakkei.Tool.AfkHold.csproj" />
     <Project Path="src/Tools/Hyakkei.Tool.AutoClicker/Hyakkei.Tool.AutoClicker.csproj" />
     <Project Path="src/Tools/Hyakkei.Tool.Translator/Hyakkei.Tool.Translator.csproj" />
   </Folder>

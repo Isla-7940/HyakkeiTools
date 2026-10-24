@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using H.NotifyIcon;
 using Hyakkei.Core;
+using Hyakkei.Tool.AfkHold;
 using Hyakkei.Tool.AutoClicker;
 using Hyakkei.Tool.Translator;
 using Wpf.Ui.Appearance;
@@ -49,6 +50,7 @@ public partial class App : Application
         ToolContext.Config = Config;
         Tools.Register(new AutoClickerTool());
         Tools.Register(new TranslatorTool());
+        Tools.Register(new AfkHoldTool());
 
         _mainWindow = new MainWindow();
         MainWindow = _mainWindow;

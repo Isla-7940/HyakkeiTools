@@ -10,7 +10,7 @@
     <AssemblyName>HyakkeiTools</AssemblyName>
     <ApplicationIcon>Assets\logo.ico</ApplicationIcon>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <Version>0.6.0</Version>
+    <Version>0.7.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,6 +22,7 @@
     <ProjectReference Include="..\Hyakkei.Core\Hyakkei.Core.csproj" />
     <ProjectReference Include="..\Tools\Hyakkei.Tool.AutoClicker\Hyakkei.Tool.AutoClicker.csproj" />
     <ProjectReference Include="..\Tools\Hyakkei.Tool.Translator\Hyakkei.Tool.Translator.csproj" />
+    <ProjectReference Include="..\Tools\Hyakkei.Tool.AfkHold\Hyakkei.Tool.AfkHold.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,0 +1,44 @@
+<UserControl x:Class="Hyakkei.Tool.AfkHold.AfkIslandView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- 布局遵循 docs/design/DESIGN.md：行1 组合键芯片 + 鼠标分段，行2 状态 + 主按钮 -->
+    <StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- 键位芯片：点芯片删除，点 + 捕获新键（代码重建） -->
+            <StackPanel x:Name="KeyRow" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" />
+
+            <Border Grid.Column="1" CornerRadius="6" Padding="2" Background="{DynamicResource Island.TrackWash}">
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton x:Name="LeftBtn" GroupName="mouse" Content="左键"
+                                 Style="{DynamicResource Island.Segment}" Checked="OnMouseChanged" />
+                    <RadioButton x:Name="RightBtn" GroupName="mouse" Content="右键"
+                                 Style="{DynamicResource Island.Segment}" Checked="OnMouseChanged" />
+                    <RadioButton x:Name="NoneBtn" GroupName="mouse" Content="无"
+                                 Style="{DynamicResource Island.Segment}" Checked="OnMouseChanged" />
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <Grid Margin="0,12,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Ellipse x:Name="StatusDot" Grid.Column="1" Width="8" Height="8" VerticalAlignment="Center"
+                     Fill="{DynamicResource Island.TextTertiary}" />
+            <Button x:Name="StartBtn" Grid.Column="2" Content="开始" Margin="12,0,0,0"
+                    Style="{DynamicResource Island.PrimaryButton}" Click="OnStartClick" />
+            <TextBlock x:Name="HotkeyHint" Grid.Column="3" FontSize="11" Margin="12,0,0,0" VerticalAlignment="Center"
+                       Foreground="{DynamicResource Island.TextTertiary}" />
+        </Grid>
+    </StackPanel>
+</UserControl>
